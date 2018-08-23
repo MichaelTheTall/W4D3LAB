@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pizza Shop</title>
+  <link rel="stylesheet" href="/style.css">
+  <title>The PizzaTech PizzaTron 9000</title>
 </head>
 <body>
-  <%= yield %>
+  <section class="wrapper">
+    <header>The PizzaTech PizzaTron 9000</header>
+    <nav>
+      <ul>
+        <li><a href="/pizza-orders">View All Orders</a></li>
+        <li><a href="/pizza-orders/new">Create Order!</a></li>
+      </ul>
+    </nav>
+    <main><%=yield%></main>
+    <footer>&copy PizzaTech Ltd. 2018</footer>
+  </section>
 </body>
 </html>

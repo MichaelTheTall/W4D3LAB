@@ -56,11 +56,6 @@ class PizzaOrder
     SqlRunner.run( sql, values )
   end
 
-  def self.delete_all()
-    sql = "DELETE FROM pizza_orders;"
-    SqlRunner.run(sql)
-  end
-
   def delete()
     sql = "DELETE FROM pizza_orders
     WHERE id = $1"
@@ -76,7 +71,8 @@ class PizzaOrder
   end
 
   def self.find( id )
-    sql = "SELECT * FROM pizza_orders WHERE id = $1"
+    sql = "SELECT * FROM pizza_orders
+    WHERE id = $1"
     values = [id]
     pizza = SqlRunner.run( sql, values )
     result = PizzaOrder.new( pizza.first )

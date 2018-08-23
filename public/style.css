@@ -1,0 +1,54 @@
+body {
+  font-family: sans-serif;
+  font-size: 20pt;
+}
+
+a {
+  color: red;
+}
+
+nav ul {
+  list-style: none;
+}
+
+.wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "head"
+                       "nav"
+                       "main"
+                       "foot";
+  grid-template-rows: 150px;
+}
+
+.wrapper > header {
+  grid-area: head;
+  background-color: yellow;
+}
+
+.wrapper > nav {
+  grid-area: nav;
+  background-color: green;
+}
+
+.wrapper > main {
+  grid-area: main;
+  background-color: brown;
+}
+
+.wrapper > footer {
+  grid-area: foot;
+  background-color: slate;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "head head"
+      "nav main"
+      "nav foot"
+  }
+}
